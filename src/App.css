@@ -1,38 +1,616 @@
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: whitesmoke;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #212529;
+}
+
+h3 {
+  display: inline-block;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  padding: 10px;
+  color: rgb(239, 229, 217);
+}
+
+#region{
+  display: inline-block;
+  height: 100%;
+  width: 80%;
+  padding: 0 20px;
+}
+
+#regioncontainer{
+  position: relative;
+  align-items: center;
+  bottom: -4px;
+  display: flex;
+  justify-content: flex-end;
+  width: 230px;
+  right: 20px;
+  height: 30px;
+}
+
 .App {
-  text-align: center;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+  display: flex;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.Sidebar {
+  width: 400px;
+  background-color: #212529;
+  color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.Main,
+.Timeline,
+.Variants {
+  max-width: 1030px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  padding: 10px 30px;
+  flex-direction: column;
   align-items: center;
+}
+
+.Sidebar span {
+  margin: 10px 5px;
+  display: inline-block;
+  color: white;
+  border-radius: 0.5em;
+  padding: 5px 10px;
+  cursor: pointer;
+  /* inline doesnot work */
+}
+
+.Sidebar span:hover {
+  color: lightcoral;
+}
+
+img {
+  width: 10px;
+  height: 10px;
+}
+
+.contents {
+  border-bottom: 2px solid black;
+}
+
+
+.subcontents,
+input {
+  display: none;
+}
+
+.Navbar {
+  width: 100%;
+  padding: 20px;
+  background-color: #212529;
+  color: #ff4d6d;
+  /* color: honeydew; */
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 0.3rem;
+}
+
+.dropdown {
+  transition: 0.1s ease-in;
+}
+
+#checkindia:checked~.subcontents {
+  display: block;
+}
+
+#checkindia:checked~label .dropdown {
+  transform: rotate(180deg);
+}
+
+#checkworld:checked~.subcontents {
+  display: block;
+}
+
+#checkworld:checked~label .dropdown {
+  transform: rotate(180deg);
+}
+
+#checkcorona:checked~.subcontents {
+  display: block;
+}
+
+#checkcorona:checked~label .dropdown {
+  transform: rotate(180deg);
+}
+
+.Footer,
+.info {
+  font-size: 20px;
+  letter-spacing: normal;
+  color: white;
+  font-weight: 300;
+  display: flex;
+  background-color: #212529;
+}
+
+.about,
+.contact {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.contact {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about {
+  width: 60%;
+  padding-left: 25px;
+}
+
+.contact>span {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contact span a {
+  text-decoration: none;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.contact span a:hover {
+  color: paleturquoise;
+}
+
+.copyright {
+  color: paleturquoise;
+  letter-spacing: 0.3rem;
+}
+
+.death {
+  color: red;
+  font-weight: bold;
+}
+
+.recovered {
+  color: green;
+  font-weight: bold;
+}
+
+.total,
+.active {
+  font-weight: bold;
+  color: blue;
+}
+
+.Main img[alt="Top5CovidCountries"],
+.Main img[alt="worldstats"],
+.Timeline img[alt="timeline"] {
+  width: 100%;
+  height: 100%;
+  border-radius: 1em 1em 0em 0em;
+}
+
+.Main .Top5CovidCountries,
+.Main .worldstats,
+.Main .statistics,
+.Timeline .timeline {
+  display: flex;
+  margin: 30px 0;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgb(71, 71, 71);
+  align-items: center;
+  font-weight: bold;
+  border-radius: 1em;
+  color: white;
+  transition: all 0.4s ease-in-out;
+}
+
+.Main .Top5CovidCountries,
+.Main .worldstats,
+.Timeline .timeline {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Main .statistics:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 10px rgb(148, 148, 148);
+}
+
+.Main .container,
+.Timeline .container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Main .statistics {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 260px;
+}
+
+.Timeline .container {
+  width: 70%;
+  margin: 35px 0;
+}
+
+.Timeline img[alt="exponential"] {
+  width: 28%;
+  height: 200px;
+  border-radius: 1em;
+}
+
+.imagecontainer {
+  display: flex;
+  align-items: center;
+}
+
+.Main img[alt="mask"] {
+  width: 300px;
+  height: 200px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.Main .imagecontainer {
+  align-items: flex-start;
+}
+
+.Card {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 25px 25px 20px;
+  text-align: center;
+}
+
+.Card img {
+  width: 80%;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.Prevention {
+  display: flex;
+  max-width: 1030px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+#India,
+#World {
+  padding: 10px 30px;
+  max-width: 1030px;
+}
+
+.Symptoms,
+.Treatments,
+.parent,
+.Country,
+.State {
+  padding: 10px 30px;
+  max-width: 1030px;
+}
+
+.Symptoms img {
+  width: 50%;
+  height: 300px;
+}
+
+.Variants {
+  align-items: flex-start;
+}
+
+.Variants .voc thead {
+  background-color: #212529;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Variants table {
+  border-spacing: 0;
+  margin: 30px 0;
+  background-color: #e9ecef;
+  max-width: 1000px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Variants td,
+.Variants th {
+  padding: 5px 10px;
+}
+
+.commonmenu {
+  display: none;
+}
+
+.Variants table tr:nth-of-type(2n) {
+  background-color: #adb5bd;
+}
+
+.Sidebar input[type="checkbox"]:checked~label {
+  background-color: #212529;
+}
+
+.Treatments {
+  column-count: 2;
+  column-gap: 30px;
+  padding: 20px 30px;
+}
+
+.Treatments h3 {
+  margin: 0;
+}
+
+.parent {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Heading {
+  text-align: center;
+  font-size: 30px;
+}
+
+
+
+.Country img[alt="ratio"] {
+  width: 60%;
+  height: 300px;
+}
+
+.Country .countrystats {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: whitesmoke;
+  border-radius: 1em;
+  padding: 80px 30px;
+  margin-top: 40px;
+}
+
+.Country .content div div {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .Main .imagecontainer {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Navbar span {
+    font-size: 25px;
+  }
+
+  .Navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 4;
+  }
+
+  .Main,
+  .India,
+  .parent,
+  .World,
+  .Sidebar,
+  .Footer {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    position: relative;
+    top: 69px;
+    box-sizing: border-box;
+  }
+
+  .Heading h2{
+    margin-top: 50px;
+  }
+
+  .parent{
+    padding-top: 30px;
+  }
+
+  label[class="commonmenu"] {
+    display: flex;
+    width: 20px;
+    justify-content: center;
+    position: fixed;
+    z-index: 6;
+    top: 0px;
+    right: 0px;
+    height: 49px;
+    background-color: #212529;
+    font-size: 20px;
+  }
+
+  .Footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .Footer .info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Footer .about,
+  .Footer .contact {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .Footer .about {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.2px solid gray;
+  }
+
+  .Footer .about p {
+    font-size: 17px;
+  }
+
+  .Sidebar {
+    position: relative;
+    left: -120%;
+    /* transition: all 0.2s linear; */
+    width: 0%;
+    padding-left: 0;
+    padding-right: 0;
+    z-index: 3;
+  }
+
+  #regioncontainer{
+    right: 40px;
+    padding-right: 0;
+    width: 200px;
+    bottom: 1px;
+  }
+
+  .Timeline {
+    padding: 15px 0;
+  }
+
+  .Timeline .imagecontainer {
+    flex-direction: column;
+  }
+
+  .Timeline img,
+  .Timeline .container,
+  .Timeline .timeline,
+  .Timeline .imagecontainer img {
+    width: 100%;
+  }
+
+  input[id="menu"]:checked~.Sidebar {
+    left: 0%;
+    width: 100%;
+  }
+
+  input[id="menu"]:checked~.Main,
+  input[id="menu"]:checked~.parent,
+  input[id="menu"]:checked~.World,
+  input[id="menu"]:checked~.India {
+    position: fixed;
+
+  }
+
+  .Main .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Main .container img,
+  .Main .container div {
+    width: 100%;
+  }
+
+
+  .Country {
+    padding: 20px 0;
+  }
+
+  .World {
+    padding: 20px 0;
+  }
+
+  .Main img[alt="mask"] {
+    margin-bottom: 30px;
+  }
+
+  .Treatments {
+    column-count: 1;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .Treatments iframe {
+    width: 300px;
+    height: 150px;
+  }
+
+  .Heading h2 {
+    margin-top: 35px;
+  }
+
+  .World .countrystats {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 20px;
+  }
+
+  .Symptoms img{
+    width: 100%;
+    height: 200px;
+  }
+
+  .World .countrystats img {
+    width: 100%;
+    height: 250px;
+  }
+
+  .cross{
+    display: none;
+    padding: 1px 2px;
+  }
+
+  #menu:checked~label>.cross{
+    display: block;
+  }
+  #menu:checked~label>.bars{
+    display: none;
   }
 }
