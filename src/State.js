@@ -44,7 +44,7 @@ class State extends React.Component {
             <div className="parent statehead">
                 <Heading data={this.props.state} />
                 <div className="State">
-                    <div>There has been a total of <span className="total">{state.confirmed}</span> confirmed cases in {this.props.state}. Out of which <span className="recovered">{state.recovered}</span> have been recovered and <span className="death">{state.deaths}</span> have died. {state.migratedother}
+                    <div>There has been a total of <span className="total">{state.confirmed}</span> confirmed cases in {this.props.state}. Out of which <span className="recovered">{state.recovered}</span> have been recovered and <span className="death">{state.deaths}</span> have died. {state.migratedother+" "}
                     migrated to other regions.</div>
                     <div className="description">{desc}</div>
                     <div className="visuals">
