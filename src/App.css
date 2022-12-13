@@ -463,7 +463,7 @@ a {
   text-decoration: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .Main .imagecontainer {
     flex-direction: column;
     align-items: center;
