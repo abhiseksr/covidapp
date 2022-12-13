@@ -14,27 +14,10 @@ import Sidebar from "./Sidebar";
 import Timeline from "./Timeline";
 import Prevention from "./Prevention";
 import { Route, Routes } from "react-router-dom";
+import axios from "axios";
 const indiaCovidData = require("./indiaCovidData.json");
 const worldCovidData = require("./worldCovidData.json");
 const indiaTimelineData = require("./indiaTimelineData.json");
-
-const QuickChart = require('quickchart-js');
-
-const myChart = new QuickChart();
-myChart
-  .setConfig({
-    type: 'bar',
-    data: {
-      labels: ['Hello world', 'Foo bar'],
-      datasets: [{ label: 'Foo', data: [1, 2] }],
-    },
-  })
-  .setWidth(800)
-  .setHeight(400)
-  .setBackgroundColor('transparent');
-
-// Print the chart URL
-console.log(myChart.getUrl());
 
 class App extends React.Component {
 

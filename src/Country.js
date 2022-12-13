@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import Heading from "./Heading";
 
+const baseurl = "https://quickchart.io/chart?backgroundColor=white&&width=800&&height=400e&&c=";
+
 let ratio = {
     type: 'doughnut',
     data: {
@@ -34,7 +36,7 @@ class Country extends React.Component{
         const countrydata = this.props.data;
         let d = parseInt(countrydata.deaths.replace(/,/g, '')), c  = parseInt(countrydata.cases.replace(/,/g, '')), r =  parseInt(countrydata.total_recovered.replace(/,/g, ''));
         ratio.data.datasets[0].data = [c,d,r];      
-        axios.post("http://localhost:8080/api/covid", ratio).then(res=> {this.setState({doughnuturl: res.data})}).catch((err)=>console.log(err));
+        this.setState({doughnuturl: "dummy"});
     }
 
     render(){
@@ -57,7 +59,7 @@ class Country extends React.Component{
                                 return <li>{k} : {countrydata[k]}</li>
                             })}
                         </ul>
-                        <img src={this.state.doughnuturl} alt="ratio" />
+                        <img src={baseurl+JSON.stringify(ratio)} alt="ratio" />
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import Heading from "./Heading";
 
-
+const baseurl = "https://quickchart.io/chart?backgroundColor=white&&width=800&&height=400e&&c=";
 
 let topten = {
     type: 'bar',
@@ -57,8 +57,6 @@ class Main extends React.Component {
         topten.data.datasets[0].data = topten.data.datasets[0].data.slice(0, 5);
         topten.data.datasets[1].data = topten.data.datasets[1].data.slice(0, 5);
 
-        const response = await axios.post("http://localhost:8080/api/covid", topten)
-
         worldstats.data.labels = Object.keys(world).map(k => {
             return k;
         })
@@ -69,8 +67,7 @@ class Main extends React.Component {
         worldstats.data.labels = worldstats.data.labels.slice(0, 6);
         worldstats.data.datasets[0].data = worldstats.data.datasets[0].data.slice(0, 6);
 
-        const response2 = await axios.post("http://localhost:8080/api/covid", worldstats)
-        this.setState({ barurl: response.data, pieurl: response2.data });
+        this.setState({ barurl: "dummy", pieurl: "dummy" });
 
     }
 
@@ -95,13 +92,13 @@ class Main extends React.Component {
                 <div className="container">
                     <div className="statistics left">
                         <div className="Top5CovidCountries">
-                            <img src={this.state.barurl} alt="Top5CovidCountries" />
+                            <img src={baseurl+JSON.stringify(topten)} alt="Top5CovidCountries" />
                             <p>COVID-19 cases in Top 5 countries</p>
                         </div>
                     </div>
                     <div className="statistics right">
                         <div className="worldstats">
-                            <img src={this.state.pieurl} alt="worldstats" />
+                            <img src={baseurl+JSON.stringify(worldstats)} alt="worldstats" />
                             <p>Proportion of various types of cases</p>
                         </div>
                     </div>
