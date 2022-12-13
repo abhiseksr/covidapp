@@ -31,14 +31,14 @@ label {
   color: rgb(239, 229, 217);
 }
 
-#region{
+#region {
   display: inline-block;
   height: 100%;
-  width: 80%;
-  padding: 0 20px;
+  width: 100%;
+  padding: 0 0px;
 }
 
-#regioncontainer{
+#regioncontainer {
   position: relative;
   align-items: center;
   bottom: -4px;
@@ -108,7 +108,7 @@ input {
   display: none;
 }
 
-.India{
+.India {
   width: 1030px;
 }
 
@@ -220,7 +220,7 @@ input {
   color: blue;
 }
 
-.State .visuals{
+.State .visuals {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -232,7 +232,7 @@ input {
   margin-bottom: 50px;
 }
 
-.State .description{
+.State .description {
   margin: 40px 0;
   /* font-size: 15px; */
   color: gray;
@@ -240,7 +240,8 @@ input {
 
 .Main img[alt="Top5CovidCountries"],
 .Main img[alt="worldstats"],
-.Timeline img[alt="timeline"], .State img[alt="top10districts"] {
+.Timeline img[alt="timeline"],
+.State img[alt="top10districts"] {
   width: 100%;
   height: 100%;
   border-radius: 1em 1em 0em 0em;
@@ -423,21 +424,21 @@ input {
   height: 355px;
 }
 
-.Country .countrystats table{
+.Country .countrystats table {
   border: 1px solid black;
   width: 40%;
   border-collapse: collapse;
 }
 
-.Country .countrystats td{
+.Country .countrystats td {
   padding: 4px 6px;
 }
 
-.Country .countrystats tr:nth-of-type(2n){
+.Country .countrystats tr:nth-of-type(2n) {
   background-color: gainsboro;
 }
 
-.Country .countrystats tr:first-of-type{
+.Country .countrystats tr:first-of-type {
   font-weight: 800;
 }
 
@@ -450,7 +451,7 @@ input {
   background-color: whitesmoke;
   border-radius: 1em;
   padding: 80px 30px;
-  
+
   margin-top: 40px;
 }
 
@@ -497,26 +498,26 @@ a {
     box-sizing: border-box;
   }
 
-  .India, .State{
+  .India,
+  .State {
     padding: 0 !important;
   }
 
-  .statehead .Heading h2{
+  .statehead .Heading h2 {
     margin-top: 0;
   }
 
 
-  .Heading h2{
+  .Heading h2 {
     margin-top: 50px;
   }
 
-  .parent{
+  .parent {
     padding-top: 30px;
   }
 
   label[class="commonmenu"] {
     display: flex;
-    width: 20px;
     justify-content: center;
     position: fixed;
     z-index: 6;
@@ -525,6 +526,7 @@ a {
     height: 49px;
     background-color: #212529;
     font-size: 20px;
+    padding-left: 0;
   }
 
   .Footer {
@@ -566,10 +568,10 @@ a {
     z-index: 3;
   }
 
-  #regioncontainer{
-    right: 40px;
-    padding-right: 0;
-    width: 200px;
+  #regioncontainer {
+    right: 30px;
+    padding: 0;
+    width: 160px;
     bottom: 1px;
   }
 
@@ -647,18 +649,18 @@ a {
     margin-bottom: 20px;
   }
 
-  .World .countrystats table{
+  .World .countrystats table {
     width: 100%;
     margin-top: 30px;
   }
 
 
-  .Symptoms img{
+  .Symptoms img {
     width: 100%;
     height: 200px;
   }
 
-  .India{
+  .India {
     top: 0;
 
   }
@@ -668,15 +670,16 @@ a {
     height: 200px;
   }
 
-  .cross{
+  .cross {
     display: none;
     padding: 1px 2px;
   }
 
-  #menu:checked~label>.cross{
+  #menu:checked~label>.cross {
     display: block;
   }
-  #menu:checked~label>.bars{
+
+  #menu:checked~label>.bars {
     display: none;
   }
 }
