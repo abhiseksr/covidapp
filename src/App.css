@@ -36,6 +36,7 @@ label {
   height: 100%;
   width: 100%;
   padding-left: 8px;
+  font-size: 10px;
 }
 
 #regioncontainer {
@@ -570,7 +571,7 @@ a {
   #regioncontainer {
     right: 30px;
     width: 160px;
-    bottom: 1px;
+    bottom: 0.2px;
   }
 
   .Timeline {
