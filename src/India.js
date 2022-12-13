@@ -10,7 +10,7 @@ class India extends React.Component{
             <div className="India" id="India">
                 <Routes>
                     {Object.keys(this.props.indiaCovidData.state_wise).map(state=>{
-                        return <Route exact path={`/${state}`} element={<State state={state} data={this.props.indiaCovidData.state_wise[state]} />} />
+                        return <Route exact path={`/${state}`} element={<State key={state} state={state} data={this.props.indiaCovidData.state_wise[state]} />} />
                     })}
                 </Routes>
             </div>
