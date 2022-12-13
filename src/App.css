@@ -35,7 +35,7 @@ label {
   display: inline-block;
   height: 100%;
   width: 100%;
-  padding: 0 0px;
+  padding-left: 8px;
 }
 
 #regioncontainer {
@@ -471,7 +471,7 @@ a {
   }
 
   .Navbar span {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .Navbar {
@@ -570,7 +570,6 @@ a {
 
   #regioncontainer {
     right: 30px;
-    padding: 0;
     width: 160px;
     bottom: 1px;
   }
