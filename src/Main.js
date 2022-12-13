@@ -8,7 +8,7 @@ let topten = {
     type: 'bar',
     data: {
         labels: ['January', 'February', 'March', 'April', 'May'],
-        datasets: [{ data: [50, 60, 70, 180, 190], label: "Total" }, { data: [50, 60, 70, 180, 190], label: "Deaths" }],
+        datasets: [{ data: [50, 60, 70, 180, 190], label: "Total" }],
     },
     bgcolor: "whitesmoke",
     width: 800,
@@ -53,13 +53,8 @@ class Main extends React.Component {
             let x = getInt(country.cases);
             return getInt(x * 100 / max);
         })
-        topten.data.datasets[1].data = data.map(country => {
-            let x = getInt(country.deaths);
-            return (x / max) < 1 ? 1 : getInt(x*100 / max);
-        })
         topten.data.labels = topten.data.labels.slice(0, 5);
         topten.data.datasets[0].data = topten.data.datasets[0].data.slice(0, 5);
-        topten.data.datasets[1].data = topten.data.datasets[1].data.slice(0, 5);
 
         worldstats.data.labels = Object.keys(world).map(k => {
             return k;
