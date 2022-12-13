@@ -26,6 +26,10 @@ let worldstats = {
     height: 400
 }
 
+function getInt(s){
+    return parseInt(`${s}`.replace(/,/g, ''));
+};
+
 
 class Main extends React.Component {
 
@@ -44,14 +48,14 @@ class Main extends React.Component {
         topten.data.labels = data.map(country => {
             return country.country_name;
         })
-        let max = parseInt(data[0].cases);
+        let max = getInt(data[0].cases);
         topten.data.datasets[0].data = data.map(country => {
-            let x = parseInt(country.cases);
-            return x * 10 / max;
+            let x = getInt(country.cases);
+            return getInt(x * 100 / max);
         })
         topten.data.datasets[1].data = data.map(country => {
-            let x = parseInt(country.deaths);
-            return x / max < 1 ? 0.3 : x / max;
+            let x = getInt(country.deaths);
+            return (x / max) < 1 ? 1 : getInt(x*100 / max);
         })
         topten.data.labels = topten.data.labels.slice(0, 5);
         topten.data.datasets[0].data = topten.data.datasets[0].data.slice(0, 5);
@@ -61,7 +65,7 @@ class Main extends React.Component {
             return k;
         })
         worldstats.data.datasets[0].data = Object.keys(world).map(k => {
-            let x = parseInt(world[k]);
+            let x = getInt(world[k]);
             return x;
         })
         worldstats.data.labels = worldstats.data.labels.slice(0, 6);
