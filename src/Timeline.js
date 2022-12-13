@@ -110,14 +110,14 @@ class Timeline extends React.Component {
                     <p>According to the latest numbers, Maharashtra has the highest number of coronavirus cases at <span className="total">81,36,107</span>. Of this <span className="active">1,48,660</span> are active, <span className="recovered">79,87,447</span> are recovered and <span className="death">1,48,407</span> have died. Kerala and Karnataka are next with 68,26,959 and 40,71,493 total COVID-19 cases respectively. Andaman and Nicobar Islands, Lakshadweep and Dadra and Nagar Haveli and Daman and Diu have the lowest number coronavirus cases with 10,741, 11,415 and 11,591 respectively.</p>
                     <div className="container">
                         <div className="timeline">
-                            <img src={baseurl+JSON.stringify(timelinedata)} alt="timeline" />
+                            <img src={baseurl+JSON.stringify(toptenstates)} alt="timeline" />
                             <p>Covid-19 cases in Top 5 states of India</p>
                         </div>
                     </div>
                     <p>India currently has a fatality rate of 1.19 per cent due to coronavirus. The government has said more than 70 per cent of the people recover from COVID-19 with mild or very mild symptoms. Such cases may not even require admission to COVID-19 blocks or dedicated hospitals, the Health Ministry said.</p>
                     <div className="container">
                         <div className="timeline">
-                            <img src={baseurl+JSON.stringify(toptenstates)} alt="timeline" />
+                            <img src={baseurl+JSON.stringify(timelinedata)} alt="timeline" />
                             <p>Rise of COVID recorded from Jan 2020 to August 2021</p>
                         </div>
                     </div>

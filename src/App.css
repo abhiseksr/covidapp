@@ -108,6 +108,10 @@ input {
   display: none;
 }
 
+.India{
+  width: 1030px;
+}
+
 .Navbar {
   width: 100%;
   padding: 20px;
@@ -216,9 +220,27 @@ input {
   color: blue;
 }
 
+.State .visuals{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+  border-radius: 1em;
+  margin-bottom: 50px;
+}
+
+.State .description{
+  margin: 40px 0;
+  /* font-size: 15px; */
+  color: gray;
+}
+
 .Main img[alt="Top5CovidCountries"],
 .Main img[alt="worldstats"],
-.Timeline img[alt="timeline"] {
+.Timeline img[alt="timeline"], .State img[alt="top10districts"] {
   width: 100%;
   height: 100%;
   border-radius: 1em 1em 0em 0em;
@@ -340,6 +362,7 @@ input {
 
 .Variants {
   align-items: flex-start;
+  overflow: auto;
 }
 
 .Variants .voc thead {
@@ -397,15 +420,37 @@ input {
 
 .Country img[alt="ratio"] {
   width: 60%;
-  height: 300px;
+  height: 355px;
 }
+
+.Country .countrystats table{
+  border: 1px solid black;
+  width: 40%;
+  border-collapse: collapse;
+}
+
+.Country .countrystats td{
+  padding: 4px 6px;
+}
+
+.Country .countrystats tr:nth-of-type(2n){
+  background-color: gainsboro;
+}
+
+.Country .countrystats tr:first-of-type{
+  font-weight: 800;
+}
+
 
 .Country .countrystats {
   display: flex;
-  justify-content: space-evenly;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
   background-color: whitesmoke;
   border-radius: 1em;
   padding: 80px 30px;
+  
   margin-top: 40px;
 }
 
@@ -451,6 +496,15 @@ a {
     top: 69px;
     box-sizing: border-box;
   }
+
+  .India, .State{
+    padding: 0 !important;
+  }
+
+  .statehead .Heading h2{
+    margin-top: 0;
+  }
+
 
   .Heading h2{
     margin-top: 50px;
@@ -586,20 +640,32 @@ a {
   }
 
   .World .countrystats {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     padding: 15px 0;
+    background-color: #fff;
     margin-bottom: 20px;
   }
+
+  .World .countrystats table{
+    width: 100%;
+    margin-top: 30px;
+  }
+
 
   .Symptoms img{
     width: 100%;
     height: 200px;
   }
 
+  .India{
+    top: 0;
+
+  }
+
   .World .countrystats img {
     width: 100%;
-    height: 250px;
+    height: 200px;
   }
 
   .cross{

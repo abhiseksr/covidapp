@@ -17,11 +17,17 @@ let ratio = {
         },
       },
     },
-  }
+  };
+
+function getkey(s){
+    if (s=="country_name") return "Country";
+    s = s.split("_").join(" ");
+    return s.charAt(0).toUpperCase() + s.slice(1);
+}
 
 function getInt(s){
     return parseInt(`${s}`.replace(/,/g, ''));
-}
+};
 
 class Country extends React.Component{
 
@@ -54,11 +60,14 @@ class Country extends React.Component{
                     {(getInt(countrydata.total_cases_per_1m_population)<getInt(md))?(<div> It has less number of cases per millon population than the <abbr title={md}>median</abbr> cases per million population.</div>):(<div> It has more number of cases per million population than the <abbr title={md}>median</abbr> cases per million population.</div>)}
                     Here are some statistics - </div>
                     <div className="countrystats">
-                        <ul>
+                        <table>
+                            <tbody>
                             {Object.keys(countrydata).map(k=>{
-                                return <li>{k} : {countrydata[k]}</li>
+                                return <tr><td>{getkey(k)}</td>  <td>{countrydata[k]}</td></tr>
                             })}
-                        </ul>
+
+                            </tbody>
+                        </table>
                         <img src={baseurl+JSON.stringify(ratio)} alt="ratio" />
                     </div>
                 </div>
