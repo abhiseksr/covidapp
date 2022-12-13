@@ -40,7 +40,7 @@ class Sidebar extends React.Component {
         <div className="india contents">
           <input type="checkbox" id="checkindia" />
           <label htmlFor="checkindia" className="common">
-            <h3>Covid-19 India Stats</h3>
+            <h3>Covid-19 India Statistics</h3>
             <i className="dropdown fa-solid fa-caret-down"></i>
           </label>
           <div className="subcontents">
@@ -58,7 +58,7 @@ class Sidebar extends React.Component {
         <div className="world contents">
           <input type="checkbox" id="checkworld" />
           <label htmlFor="checkworld" className="common">
-            <h3>Covid-19 World Stats</h3>
+            <h3>Covid-19 World Statistics</h3>
             <i className="dropdown fa-solid fa-caret-down"></i>
           </label>
           <div className="subcontents">
