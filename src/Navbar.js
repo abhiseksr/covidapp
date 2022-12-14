@@ -15,7 +15,7 @@ class Navbar extends React.Component {
             <div className="Navbar">
                 <span className="text">C<i class="fa-solid fa-virus"></i>VID-19</span>
                 <form action="" onSubmit={takeme} method="get" id="regioncontainer">
-                    <input placeholder="Search by a country/state" list="regions" name="region" id="region" />
+                    <input placeholder="Search by a country/state name" list="regions" name="region" id="region" />
                     <datalist id="regions">
                         {Object.keys(this.props.indiaCovidData.state_wise).map(state => {
                             return (
