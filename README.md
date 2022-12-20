@@ -1,3 +1,37 @@
+Used quickchart-js API to plot graph-based images by fetching data using one of the live covid APIs from RapidAPI. Used the concepts of key props, component-lifecycle, react-router, APIs, etc.
+Live website link - https://hmxqsh‐3000.preview.csb.app/
+
+Landing Page - 
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/85542595/208602697-fbda9297-adaa-4a8b-b84b-a04cdbd50490.png">
+
+Search Region - 
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/85542595/208602900-a9e67dfc-be19-43ab-a9e7-89ea40e1026f.png">
+
+Precautions page - 
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/85542595/208603027-816de280-a31c-4fc0-8c32-0caa00bb4c2e.png">
+
+India Statistics - 
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/85542595/208603153-6890ba9c-7dbd-4bb2-982f-b66e9da29d89.png">
+
+World Statistics - 
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/85542595/208603234-57631636-1ebe-493a-b333-ee851f968b73.png">
+
+Responsive - 
+
+<img width="384" alt="image" src="https://user-images.githubusercontent.com/85542595/208603447-e709b138-6f10-4741-8fa4-bf5cf83e4a99.png">
+
+Scrollable interface - 
+
+<img width="384" alt="image" src="https://user-images.githubusercontent.com/85542595/208603549-e866d799-7a4f-42af-a042-9283d4fe51a0.png">
+
+
+## SETUP
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
