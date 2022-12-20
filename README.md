@@ -27,7 +27,8 @@ Responsive -
 
 Scrollable interface - 
 
-<img width="384" alt="image" src="https://user-images.githubusercontent.com/85542595/208603549-e866d799-7a4f-42af-a042-9283d4fe51a0.png">
+<img width="384" alt="Screenshot 2022-12-20 at 12 31 12 PM" src="https://user-images.githubusercontent.com/85542595/208606819-823b1d00-4c23-4a62-94ce-f42784fccbe6.png">
+
 
 
 ## SETUP
